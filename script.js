@@ -157,9 +157,9 @@ function drawShootingStars() {
 function createFallingElement() {
     const rand = Math.random();
     let type;
-    if (rand < 0.6) {
+    if (rand < 0.4) {
         type = 'phrase';
-    } else if (rand < 0.8) {
+    } else if (rand < 0.7) {
         type = 'image';
     } else {
         type = 'heart';
@@ -233,7 +233,6 @@ function drawFallingElements() {
 
         if (el.z <= 0) {
             fallingElements.splice(i, 1);
-            createFallingElement();
             continue;
         }
 
@@ -274,7 +273,6 @@ function drawFallingElements() {
         if ((displayX + size / 2 < 0 || displayX - size / 2 > canvas.width ||
              displayY + size / 2 < 0 || displayY - size / 2 > canvas.height) && el.z > focalLength) {
             fallingElements.splice(i, 1);
-            createFallingElement();
         }
     }
 }
